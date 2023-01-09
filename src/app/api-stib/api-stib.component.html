@@ -1,0 +1,12 @@
+<h1>API Weather Service</h1>
+<form>
+  <label for="city">Enter a city:</label>
+  <input type="text" id="city" name="city" [(ngModel)]="city" required>
+  <button type="submit" (click)="getWeatherCity(city)">Get Weather</button>
+</form>
+
+<div *ngIf="weather">
+  <p>Temperature: {{ weather.main.temp }}°F</p>
+  <p>Humidity: {{ weather.main.humidity }}%</p>
+</div>
+<router-outlet></router-outlet>
